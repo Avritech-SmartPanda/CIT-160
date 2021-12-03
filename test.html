@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Investment</title>
+
+    <script>
+        list = [28.1, 20, 23.6, 0, 15]
+
+        function linearSearch(list, key) {
+
+            for (var i = 0; i < list.length; ++i) {
+                if (list[i] == key) {
+                    return i;
+                }
+            }
+            return -1;
+
+        }
+        document.getElementById("valorRespuesta").innerHTML = linearSearch(list, 23.6);
+    </script>
+</head>
+
+<body>
+
+
+
+
+    <button type="button" onclick="linearSearch(list,  23.6)">Click for future value</button>
+    <div id="valorRespuesta"></div>
+
+</body>
+
+</html>
