@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <title>Investment Calculator</title>
+    <style>
+        body {
+            width: 400px;
+        }
+        
+        label button {
+            margin-right: 20px;
+        }
+        
+        input,
+        b {
+            text-align: right;
+            float: right;
+        }
+    </style>
+    <script>
+        /* Defining Table
+         * Input: principal, annualRate, years, periodsPerYear from user.
+         * Processing:get input from the user and call the computeFutureValue function..
+         * Output: display the result to the user.
+         */
+        function doFV() {
+            // getting principal, annualRate, years, periodsPerYear from user.
+            let principal = parseFloat(document.getElementById("principal").value);
+            let annualRate = parseFloat(document.getElementById("annualRate").value);
+            let years = parseFloat(document.getElementById("years").value);
+            let periodsPerYear = parseFloat(document.getElementById("periodsPerYear").value);
+
+            //calling the computeFutureValue function and displaying it to the user.
+            let fv = computeFutureValue(principal, annualRate, years, periodsPerYear);
+            document.getElementById('output').innerHTML = "$ " + fv;
+        }
+
+        function computeFutureValue(principal, annualRate, years, periodsPerYear) {
+            let pow = Math.pow(1 + annualRate / periodsPerYear, (years * periodsPerYear));
+            let fv = principal * pow;
+            return fv.toFixed(2);
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Investment Calculator</h1>
+    <div>
+        <p> <label for="principal">Amount invested(principal)</label><input type="text" id="principal" size="10"></p>
+        <p> <label for="annualRate">Annual rate (example: .08)</label><input type="text" id="annualRate" size="8"></p>
+        <p> <label for="years">Number of years</label><input type="text" id="years" size="4"></p>
+        <p> <label for="periodsPerYear">Periods per year</label><input type="text" id="periodsPerYear" size="4"></p>
+        <p> <button type="button" onclick="doFV()">Compute future value</button><b id="output"></b></p>
+    </div>
+</body>
+
+</html>

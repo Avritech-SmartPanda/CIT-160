@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Increase Sales</title>
+    <script>
+        /* Input: a customer’s subtotal
+         * Processing:  subtracts 10% from the subtotal if the subtotal is greater than $50 and today is Tuesday or Wednesday
+         * compute and output the total amount due by adding sales tax of 6% to the subtotal
+         * Output: total amount dueddd
+         */
+        function increaseSales() {
+            let dayOfWeek = new Date().getDay();
+            let subtotal = parseFloat(document.getElementById("subtotal").value);
+            let total = 0;
+            let totalAmountDue = 0;
+            let tax = 0.06;
+
+            if ((dayOfWeek == 2 || dayOfWeek == 3) && (subtotal > 50)) {
+                total = subtotal - (subtotal * 0.1);
+            } else {
+                total = subtotal
+            };
+            totalAmountDue = total + (total * tax);
+
+            document.getElementById("output").innerHTML = "Total amount due = " + (Math.round(totalAmountDue * 100) / 100).toFixed(2);
+
+        }
+    </script>
+</head>
+
+<body>
+    Enter your subtotal
+    <input type="text" id="subtotal">
+    <button type="button" onclick="increaseSales()">Increase sales</button><br><br>
+    <div><b id="output"></b></div>
+</body>
+
+</html>

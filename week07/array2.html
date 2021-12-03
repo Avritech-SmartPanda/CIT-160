@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <title>Arrays</title>
+
+
+</head>
+
+<body>
+    <h1>Arrays</h1>
+    <div>
+        <!-- <button type="button" onclick="averageBig()">Compute </button> -->
+        <div id="output"></div>
+    </div>
+</body>
+<script>
+    /* Defining Table
+     * Input: no user input
+     * Processing: Test the countEvens and multiply functions by calling them.
+     * Output: The values returned from the countEvens and multiply functions.
+     */
+    let list = [70, 950, 671, 6];
+
+    function getLast(list) {
+        return list[list.length - 1];
+    };
+
+    function averageBig(list) {
+        let average = 0;
+        let sum = 0;
+        let count = 0;
+        console.log(list.length);
+        for (let i = 0; i < list.length; i++) {
+            if (list[i] > 1000) {
+                sum += list[i];
+                count++;
+                average = sum / count;
+            }
+        };
+        return average;
+    };
+</script>
+
+</html>

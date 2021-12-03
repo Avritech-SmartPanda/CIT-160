@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <title>Wind Chill</title>
+    <script>
+        /* Defining Table
+         * Input: temperature and wind speed.
+         * Processing:call windChill function and display the windchill to the user.
+         * Output: display the windchill to the user.
+         */
+        function doInputOutput() {
+            // get a temperature from the first text field
+            let tempF = parseFloat(document.getElementById("temp").value);
+
+            // get a wind speed from the second text field
+            let speed = parseFloat(document.getElementById("speed").value);
+
+            // Call the windChill function and store the value returned  in a variable
+            let factor = windChill(tempF, speed);
+
+            // Display the value returned by windChill for the user to see.
+            document.getElementById('output').innerHTML = factor;
+        };
+
+        /* Defining Table
+         * Input: temperature and wind speed parameters.
+         * Processing:calculate the windchill.
+         * Output: return wind chill factor value.
+         */
+        function windChill(tempF, speed) {
+            //calculate the wind chill factor as a temperature in Fahrenheit
+            let f = 35.74 + (0.6215 * tempF) - (35.75 * Math.pow(speed, .16)) + (0.4275 * tempF * Math.pow(speed, .16));
+            //return the wind chill factor in Fahrenheit
+            return f;
+        };
+    </script>
+</head>
+
+<body>
+
+    <div>
+        Temperature
+        <input type="text" id="temp"> Wind Speed
+        <input type="text" id="speed">
+        <button type="button" onclick="doInputOutput()">Wind Chill</button>
+    </div>
+    <p>Wind chill: <b id="output"></b></p>
+
+</body>
+
+</html>

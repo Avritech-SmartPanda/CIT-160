@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <title>Powers of 2</title>
+    <script>
+        /* Defining Table
+         * Input: None
+         * Processing:display all powers of 2 from 20 up to 231
+         * Output: display all powers of 2 from 20 up to 231
+         */
+
+        function powerFunc() {
+            let display = "";
+            let base = 2;
+            for (let exponent = 0; exponent <= 31; exponent++) {
+                let result = Math.pow(base, exponent);
+                display += "2<sup> " + exponent + "</sup> =  " + result + "</br>";
+                document.getElementById("output").innerHTML = display;
+            }
+        }
+    </script>
+</head>
+
+<body onload="powerFunc()">
+    <h4>Powers of 2 from 0 up to 31</h4>
+    <div id="output"></div>
+</body>
+
+</html>

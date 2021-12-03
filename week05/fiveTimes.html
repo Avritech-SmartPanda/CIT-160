@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <title>Multiplication Table</title>
+    <script>
+        /* Defining Table
+         * Input: None
+         * Processing: display the five times table from 1 to 12
+         * Output: five times table from 1 to 12
+         */
+
+        function multiplyFunc() {
+            let display = "";
+            let num = 5;
+            for (let i = 1; i <= 12; i++) {
+                let result = i * num;
+                display += num + " x " + i + " = " + result + "\</br>";
+                document.getElementById("output").innerHTML = display;
+            }
+
+        }
+    </script>
+</head>
+
+<body onload="multiplyFunc()">
+    <h4>5 times table from 1 to 12</h4>
+    <div id="output"></div>
+</body>
+
+</html>

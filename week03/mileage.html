@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computing a vehicle's mileage</title>
+    <script>
+        /* Input: Beginning and ending odometer readings and the number of gallons of gasoline used
+         * Processing: Ask user for the odometer readings and calculate miles driven,gallons used and compute miles per gallon
+         * Output: miles per gallon
+         */
+        function computeMileage() {
+            // Read beginning odometer readings from the user and convert input typed from text to a number.
+            let startingMileage = parseFloat(document.getElementById('startingMileage').value);
+
+            // Read  ending odometer readings from the user and convert input typed from text to a number.
+            let endingMileage = parseFloat(document.getElementById('endingMileage').value);
+
+            // Compute mileage by subtracting the original odometer reading from the new one.
+            let miles = endingMileage - startingMileage;
+
+            // Read  gallons used from the user and convert input typed from text to a number.
+            let gallons = parseFloat(document.getElementById('gallons').value);
+
+            // Compute miles per gallon.
+            let mpg = miles / gallons
+
+            // Display vehicles mileage.
+            document.getElementById('mileageDiv').innerHTML = "Miles per gallon: " + mpg;
+        }
+    </script>
+</head>
+
+<body>
+    <p>Enter beginning odometer readings: <input type="text" id="startingMileage"></p>
+    <p>Enter ending odometer readings: <input type="text" id="endingMileage"></p>
+    <p>Enter gallons used: <input type="text" id="gallons"></p>
+    <button type="button" onclick="computeMileage()">Compute</button>
+    <div id="mileageDiv"></div>
+</body>
+
+</html>

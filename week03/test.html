@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <title>Math Quiz</title>
+    <script>
+        /* Defining Table
+         * Input: Two numbers and Operator and the Solution
+         * Processing: Find Solution and verify it against input Solution
+         * Output: "Correct! Good job!" or "Incorrect! Try again!"
+         */
+
+        function mathQuiz() {
+
+            var balance = 100;
+            var annualRate = 0.06;
+            var numMonths = 3;
+            var monthlyRate = annualRate / 12;
+
+            // For each month, compute the interest and add it to the balance.
+            for (var month = 1; month <= numMonths; month++) {
+                // Compute the interest for a month.
+                var interest = balance * monthlyRate;
+
+                // Round the interest to pennies.
+                interest = Math.round(interest * 100) / 100;
+
+                // Add the interest to the balance.
+                balance += interest;
+            }
+
+            document.getElementById('output').innerHTML = monthlyRate
+                // "Your balance after " + numMonths + " months will be $" + balance;
+        }
+    </script>
+</head>
+
+<body>
+
+    <!-- Program activation button -->
+    <!-- <button type="button" onclick="mathQuiz()">Check</button>
+    <p>Solution:</p>
+    <div id="output"></div> -->
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foot Wear</title>
+    <script>
+        /* Input: today's weather
+         * Processing: select type of footwear according to weather condition
+         * Output: foot wear of that day
+         */
+        function selectFootwear() {
+            let weather = document.getElementById('weather').value;
+            let footwear = '';
+            switch (weather) {
+                case 'hot':
+                    footwear = 'sandals'
+                    break;
+                case 'rain':
+                    footwear = 'galoshes'
+                    break;
+                case 'snow':
+                    footwear = 'boots'
+                    break;
+                default:
+                    footwear = 'shoes'
+                    break;
+            }
+            document.getElementById('output').innerHTML = "Please wear " + "\<b>" + footwear + "\</b>" + " today.";
+        }
+    </script>
+</head>
+
+<body>
+    Enter weather condition: <input type="text" id="weather">
+    <button type="button" onclick="selectFootwear()">What to wear?</button>
+    <div id="output"></div>
+</body>
+
+</html>

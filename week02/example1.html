@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First JavaScript Program</title>
+    <script>
+        "use strict";
+
+        function applyScripture() {
+            // Get the user's name from the text field that has the id
+            // of "nameInputBox" and store it in a variable named name.
+            let name = document.getElementById('nameInputBox').value;
+
+            // Use string concatenation to create a verse
+            // of scripture personalized for the user.
+            let scripture = "I, " + name + ", having been born of" +
+                " goodly parents, therefore I was taught somewhat" +
+                " in all the learning of my father.";
+
+            // Display the scripture in the div that has the id "outputDiv".
+            document.getElementById('outputDiv').innerHTML = scripture;
+        }
+    </script>
+</head>
+
+<body>
+    Please enter your name: <input type="text" id="nameInputBox">
+    <button type="button" onclick="applyScripture()">Verse</button>
+    <div id="outputDiv"></div>
+</body>
+
+</html>

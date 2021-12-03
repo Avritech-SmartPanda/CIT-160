@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <title>Sum of odds</title>
+    <script>
+        /* Defining Table
+         * Input: an integer n
+         * Processing: calculate the sum of all the odd integers between 1 and n
+         * Output:  sum of all the odd integers between 1 and n
+         */
+
+        function sumOdds() {
+            let num = parseInt(document.getElementById('num').value);
+            let sum = 0;
+            for (let i = 1; i <= num; i += 2) {
+                sum += i;
+            }
+            document.getElementById("output").innerHTML = "Sum = " + sum;
+            document.getElementById("numOutput").innerHTML = " between 1 and " + num;
+        }
+    </script>
+</head>
+
+<body>
+    <h4>Sum of all odd numbers <span id="numOutput"></span></h4>
+    <div>
+        Enter any number
+        <input type="text" id="num">
+        <button type="button" onclick="sumOdds()">Compute</button>
+    </div>
+    <p>Solution: <b id="output"></b></p>
+</body>
+
+</html>

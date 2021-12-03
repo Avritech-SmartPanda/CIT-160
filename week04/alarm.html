@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarm</title>
+    <script>
+        /* Input:today's day of week.
+         * Processing:Determines if you can sleep in on weekends and holidays or wake up early on weekdays.
+         * Output: "Get up!" if it is not a holiday or weekend and "Sleep in." if its weekends or holiday
+         */
+        function alarm() {
+            let now = new Date();
+            let month = now.getMonth();
+            let dayOfMonth = now.getDate();
+            let dayOfWeek = now.getDay();
+            let message = 'Sleep in';
+
+            if ((dayOfWeek > 0) && (dayOfWeek < 6)) {
+                let dayIsHoliday = (dayOfMonth == 1 && month == 0) || (dayOfMonth == 4 && month == 6) || (dayOfMonth == 25 && month == 11)
+                if (!dayIsHoliday) {
+                    message = 'Get up!';
+                }
+            }
+            document.getElementById('output').innerHTML = message;
+        }
+    </script>
+</head>
+
+<body>
+    <h4>What should I do today!</h4>
+    <button type="button" onclick="alarm()">check</button><br><br>
+    <div><b id="output"></b></div>
+</body>
+
+</html>

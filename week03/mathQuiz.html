@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Quiz</title>
+    <script>
+        /* Input: number, arithmetic operator (+, -, *, or /), another number and the child's answer to the problem.
+         * Processing:  compute the correct answer and compare it to the child's answer
+         * Output: "Correct! Good job" or "Incorrect. Try again!"
+         */
+        function quiz() {
+            let num1 = parseFloat(document.getElementById("num1").value);
+            let operator = document.getElementById("operator").value;
+            let num2 = parseFloat(document.getElementById("num2").value);
+            let answer = parseFloat(document.getElementById("answer").value);
+            let solution = 0,
+                message = '';
+
+            if (operator == '+') {
+                solution = num1 + num2;
+            } else if (operator == '-') {
+                solution = num1 - num2;
+            } else if (operator == '/') {
+                solution = num1 / num2
+            } else if (operator == '*') {
+                solution = num1 * num2;;
+            }
+
+            if (answer == solution) {
+                message = "Correct! Well Done!";
+            } else {
+                message = "Incorrect! Try Again!";
+            }
+            document.getElementById("output").innerHTML = message;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Test Your Math Skill!</h1>
+    <div>
+        <input type="text" id="num1">
+        <input type="text" id="operator">
+        <input type="text" id="num2"> =
+        <input type="text" id="answer">
+    </div>
+    <button type="button" onclick="quiz()">Check answer</button><br><br>
+    <div><b id="output"></b></div>
+</body>
+
+</html>
